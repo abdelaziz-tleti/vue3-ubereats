@@ -1,7 +1,7 @@
 <template>
   <div class="restaurant--row">
     <h2 class="title">Nos restaurants
-      {{ toto }}
+      <!-- {{ toto }} -->
     </h2>
 <div class="wrapper--card">
     <restaurant-card v-for="(card, index) in 3" :key="index" />
@@ -17,9 +17,9 @@ export default {
   components: {
     RestaurantCard,
   },
-  props:{
-    toto: String,
-  }
+  // props:{
+  //   toto: String,
+  // }
 };
 </script>
 
