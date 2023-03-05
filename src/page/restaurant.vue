@@ -1,15 +1,14 @@
 <template>
-    <RouterLink to="/">
-        <div id="return">Retour à la Home</div>
-    <br>
-    </RouterLink>
-   
+  <RouterLink to="/">
+    <div id="return">Retour à la Home</div>
+    <br />
+  </RouterLink>
+
   <!-- <p>{{ $route.params.name }}</p> -->
-  <img :src="restaurant.image">
+  <img :src="restaurant.image" />
   <p>{{ restaurant.name }}</p>
   <p>note du restaurant {{ restaurant.note }}</p>
   <p>temps de livraison {{ restaurant.drive_time }}</p>
-
 </template>
 
 <script>
@@ -20,15 +19,15 @@ export default {
   name: "RestaurantPage",
   setup() {
     const route = useRoute();
-    const restaurant =  BDD.find((restaurant) => 
-        restaurant.name === route.params.name
-      );
+    const restaurant = BDD.find(
+      (restaurant) => restaurant.name === route.params.name
+    );
 
-      return{
-        restaurant
-      }
+    return {
+      restaurant,
+    };
     // onMounted(() => {
-    //     console.log(restaurant);  
+    //     console.log(restaurant);
     // //   console.log(
     // //   BDD.find((restaurant) => {
     // //     if (restaurant.name === route.params.name) {
@@ -41,13 +40,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#return{
-    margin: 25px 45px;
-    font-weight: 600;
-    cursor: pointer;
-    &:hover{
-        font-weight: 1000;
-        color:rgb(60, 0, 255);
-    }
+#return {
+  margin: 25px 45px;
+  font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    font-weight: 1000;
+    color: rgb(60, 0, 255);
+  }
 }
 </style>

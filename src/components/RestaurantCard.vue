@@ -1,6 +1,6 @@
 <template>
   <div class="restaurant--card">
-    <div  :style="changeBackground" class="restaurant--image"></div>
+    <div :style="changeBackground" class="restaurant--image"></div>
     <div class="restaurant--information">
       <div class="top">
         <p class="name">{{ info_restaurant.name }}</p>
@@ -15,24 +15,24 @@
 
 <script>
 //import
-import { computed } from 'vue';
+import { computed } from "vue";
 
 export default {
-    name: 'RestaurantCard',
-    props: {
-      info_restaurant: Object,
-    },
-    setup(props){
-      const changeBackground = computed(()=> {
-return {
-  backgroundImage:`url(${props.info_restaurant.image})`
-}
-      })
-      //return
+  name: "RestaurantCard",
+  props: {
+    info_restaurant: Object,
+  },
+  setup(props) {
+    const changeBackground = computed(() => {
       return {
-        changeBackground,
-      }
-    }
+        backgroundImage: `url(${props.info_restaurant.image})`,
+      };
+    });
+    //return
+    return {
+      changeBackground,
+    };
+  },
 };
 </script>
 

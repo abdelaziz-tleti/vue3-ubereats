@@ -11,14 +11,18 @@
           placeholder="De quoi vous avez envie? "
         />
         <div class="search">
-      <router-link v-for="(restaurant,i) in search_restaurant" :key="i" :to="{name:'Restaurant', params: {name: restaurant.name}}">
-        <div  class="container--restaurant-search">
-            <div class="wrapper-img">
-              <img :src="restaurant.image" />
+          <router-link
+            v-for="(restaurant, i) in search_restaurant"
+            :key="i"
+            :to="{ name: 'Restaurant', params: { name: restaurant.name } }"
+          >
+            <div class="container--restaurant-search">
+              <div class="wrapper-img">
+                <img :src="restaurant.image" />
+              </div>
+              <p>{{ restaurant.name }}</p>
             </div>
-            <p>{{  restaurant.name }}</p>
-          </div>
-      </router-link>
+          </router-link>
         </div>
       </div>
     </div>
@@ -83,20 +87,21 @@ export default {
     let search_restaurant = ref([]);
     watch(user_searchrestaurant, (newValue) => {
       let regex = RegExp(newValue.toLowerCase());
-      
+
       let new_search_restaurant = all_restaurant.filter((restarant) =>
         regex.test(restarant.name.toLowerCase())
       );
 
+      newValue == 0
+        ? (search_restaurant.value = [])
+        : (search_restaurant.value = new_search_restaurant);
 
-      newValue == 0  ? search_restaurant.value = [] : search_restaurant.value = new_search_restaurant; 
-
-    //   if(newValue ==0 ){
-    //     search_restaurant.value = [];
-    //   }else{
-    //     search_restaurant.value = new_search_restaurant;
-    //   }
-    //   //console.log(search_restaurant);
+      //   if(newValue ==0 ){
+      //     search_restaurant.value = [];
+      //   }else{
+      //     search_restaurant.value = new_search_restaurant;
+      //   }
+      //   //console.log(search_restaurant);
     });
     //
     onMounted(makeDataRestaurant);
@@ -141,18 +146,18 @@ export default {
           display: flex;
           align-items: center;
           padding: 10px;
-          &:hover{
+          &:hover {
             background: #f5f5f5;
           }
-          .wrapper-img{
+          .wrapper-img {
             height: 40px;
             width: 40px;
             border-radius: 50%;
             overflow: hidden;
             margin-right: 25px;
-            img{
-                height: 100%;
-            width: auto; 
+            img {
+              height: 100%;
+              width: auto;
             }
           }
         }
