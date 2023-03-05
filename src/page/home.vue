@@ -5,7 +5,11 @@
 </template>
 
 <script>
+// IMPORT
 import BDD from "../BDD";
+import { onMounted } from "vue";
+
+// COMPONENTS
 import RestaurantRow from "@/components/RestaurantRow.vue";
 
 export default {
@@ -35,7 +39,6 @@ export default {
           restaurant.drive_time
         );
 
-        //console.log(new_restaurant);
         if (three_restaurant.length === 2) {
           three_restaurant.push(new_restaurant);
           data_restaurant.push(three_restaurant);
@@ -45,10 +48,8 @@ export default {
         }
       }
     };
-    makeDataRestaurant();
-    
-    console.log(data_restaurant);
-    //  console.log(resto);
+
+    onMounted(makeDataRestaurant);
   },
 };
 </script>
