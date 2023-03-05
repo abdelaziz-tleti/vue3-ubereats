@@ -38,7 +38,7 @@ return {
 
 <style lang="scss">
 .restaurant--card {
-  width: 32%;
+  width: 80%;
   height: 30vh;
   p {
     margin: 0px;

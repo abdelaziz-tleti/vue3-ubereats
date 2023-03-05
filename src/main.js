@@ -6,7 +6,7 @@ import Home from './page/home.vue'
 import RestaurantPage from './page/restaurant.vue'
 const routes = [
     {path: '/', component: Home},
-    {path: '/restaurant', component: RestaurantPage}
+    {name: 'Restaurant' , path: '/restaurant/:name', component: RestaurantPage}
 
 ]
 
