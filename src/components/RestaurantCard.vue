@@ -3,19 +3,22 @@
     <div class="restaurant--image"></div>
     <div class="restaurant--information">
       <div class="top">
-        <p class="name">Subway</p>
+        <p class="name">{{ info_restaurant.name }}</p>
         <p class="note">
-          <span> 4.5 </span>
+          <span> {{ info_restaurant.note }} </span>
         </p>
       </div>
-      <p class="time">20-30mn</p>
+      <p class="time">{{ info_restaurant.drive_time }}</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'RestautantCard',
+    name: 'RestaurantCard',
+    props: {
+      info_restaurant: Object,
+    }
 };
 </script>
 
