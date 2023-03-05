@@ -1,6 +1,6 @@
 <template>
-  <div class="restautant--row">
-    <h2 class="title">Nos restautants</h2>
+  <div class="restaurant--row">
+    <h2 class="title">Nos restaurants</h2>
 <div class="wrapper--card">
     <restaurant-card v-for="(card, index) in 3" :key="index" />
 
@@ -11,7 +11,7 @@
 <script>
 import RestaurantCard from "./RestaurantCard.vue";
 export default {
-  name: "RestautantRow",
+  name: "RestaurantRow",
   components: {
     RestaurantCard,
   },
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-.restautant--row{
+.restaurant--row{
     .wrapper--card{
        display: flex; 
         align-items: center;
