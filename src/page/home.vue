@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <RestaurantRow />
+    <RestaurantRow toto="toto"/>
   </div>
 </template>
 
